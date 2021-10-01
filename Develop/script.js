@@ -1,5 +1,16 @@
 // Assignment code here
 
+//will require the following
+// length of password
+// different character types
+//uppercase letters
+//lowercase letters
+//numbers 
+//input is validated and only one selection is granted
+//password is displayed on the page or on a window prompt option 
+
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
