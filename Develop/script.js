@@ -22,37 +22,45 @@ function generatePassword() {
   }
 
   //with correct length entered in prompt window, password can start generating 
-  if (length >= 8 && length <= 128) {
-  var alphabetLower = confirm("First, would you like lowercase letters (ex: abcdefg...)? If yes, click 'OK'. If no, click 'CANCEL'."); 
-  if (alphabetLower) {
-    passwordSet += selectionOfCharacters.alphabetLower;
-  }
-  var alphabetUpper = confirm("Next, would you like capital letters (ex: ABCDEFG...)? If yes, click 'OK'. If no, click 'CANCEL'.");
-  if (alphabetUpper) {
-    passwordSet += selectionOfCharacters.alphabetUpper;
-  };
+  var validReply = false 
+  while (!validReply) {
+  
+    if (length >= 8 && length <= 128) {
+    var alphabetLower = confirm("First, would you like lowercase letters (ex: abcdefg...)? If yes, click 'OK'. If no, click 'CANCEL'."); 
+      if (alphabetLower) {
+       passwordSet += selectionOfCharacters.alphabetLower;
+       validReply = true;
+    };
 
-  var numbers = confirm("How about numbers? These are added by single digit only (ex. 0-9). If yes, click 'OK'. If no, click 'CANCEL'. ");
-  if (numbers) {
-    passwordSet += selectionOfCharacters.numbers;
-  };
+    var alphabetUpper = confirm("Next, would you like capital letters (ex: ABCDEFG...)? If yes, click 'OK'. If no, click 'CANCEL'.");
+      if (alphabetUpper) {
+       passwordSet += selectionOfCharacters.alphabetUpper;
+       validReply = true;
+    };
 
-  var symbols = confirm("Finally, would you like to implement special characters/symbols (ex: !%#@^...)? If yes, click 'OK'. If no, click 'CANCEL'.");
-  if (symbols) {
-    passwordSet += selectionOfCharacters.symbols;
-  };
+    var numbers = confirm("How about numbers? These are added by single digit only (ex. 0-9). If yes, click 'OK'. If no, click 'CANCEL'. ");
+       if (numbers) {
+       passwordSet += selectionOfCharacters.numbers;
+        validReply = true;
+    };
 
-  //debugger;
-  //restarts character selection but does not create a new password - so far new statement takes it back to restart making password again 
-  if (alphabetLower != true && alphabetUpper !=true && numbers != true && symbols !=true) {
+    var symbols = confirm("Finally, would you like to implement special characters/symbols (ex: !%#@^...)? If yes, click 'OK'. If no, click 'CANCEL'.");
+        if (symbols) {
+        passwordSet += selectionOfCharacters.symbols;
+        validReply = true;
+    };
+
+//part of function does not want to work - 
+while (alphabetLower != true && alphabetUpper !=true && numbers != true && symbols !=true) {
     window.alert("You must choose at least one character type for your password! The available options are lowercase alphabet letters, uppercase alphabet letters, numbers, and symbols/special characters.");
     return generatePassword();
    // alphabetLower = confirm("First, would you like lowercase letters (ex: abcdefg...)? If yes, click 'OK'. If no, click 'CANCEL'.");
-    // alphabetUpper = confirm("Next, would you like capital letters (ex: ABCDEFG...)? If yes, click 'OK'. If no, click 'CANCEL'.");
-    // numbers = confirm("How about numbers? These are added by single digit only (ex. 0-9). If yes, click 'OK'. If no, click 'CANCEL'. ");
-    // symbols = confirm("Finally, would you like to implement special characters/symbols (ex: !%#@^...)? If yes, click 'OK'. If no, click 'CANCEL'.");
+   //alphabetUpper = confirm("Next, would you like capital letters (ex: ABCDEFG...)? If yes, click 'OK'. If no, click 'CANCEL'.");
+   // numbers = confirm("How about numbers? These are added by single digit only (ex. 0-9). If yes, click 'OK'. If no, click 'CANCEL'. ");
+   // symbols = confirm("Finally, would you like to implement special characters/symbols (ex: !%#@^...)? If yes, click 'OK'. If no, click 'CANCEL'.");
   }
- 
+  };
+
   //completed/solved function that generates user input passwords
   var completedPassword = ""; 
   for(var i = 0; i < length; i++) {
@@ -77,9 +85,9 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordEl = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordEl.textContent = password;
 }
 
 // Add event listener to generate button
