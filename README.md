@@ -1,29 +1,15 @@
 # Password Generator Starter Code
 ## Application Purpose
-This is a password generator that generates unique passwords as granted by specific requests from the user. This application was made with Javascript, HTML, and CSS.
+This is a password generator that generates strong, secure, and unique passwords as selected by specific requests from the user. When the "Generate Password" is clicked, the user is welcomed with a series of prompts on the criteria they want for the password. Character length is answered first, with the character range of at least 8 characters and no more than 128 characters. This is soon followed by the character type prompts (lowercase letters, uppercase letters, single-digit numbers, and/or special characters) which are confirmed by the user. With the length and at least one character type specified, the user input is validated and prints out the user's generated password on the page. 
 
-## Links
-GitHub Repository - https://github.com/trujilml/the-password-generator
-Deployed Link -
+## Password Generator Built With
+-JavaScript
+-HTML
+-CSS
 
-## User Story
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
+## Website Links
+-GitHub Repository - https://github.com/trujilml/the-password-generator
+-Deployed Link -
 
-## Acceptance Criteria
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters 
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt 
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered 
-THEN a password is generated that matches the selected criteria 
-WHEN the password is generated 
-THEN the password is either displayed in an alert or written to the page 
+## Screenshots
+
