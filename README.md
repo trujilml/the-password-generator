@@ -14,4 +14,4 @@ This is a password generator that generates strong, secure, and unique passwords
 ## Screenshots
 These screenshots demonstrates how the site works for a user who specifies a password with the length of 22 characters and all of the character types added. The last screenshots demonstrate when no length is entered or if less than 8 characters/more than 128 characters is entered, and if no character type is selected at all. When no length is specified, over or under the character requirements, or no character type is selected - the password generator restarts by asking the user for their password length input. 
 
-![Screenshot 1](passwordgenerator-1.png)
+![Screenshot 1](./Develop/Screenshots/passwordgenerator-1.png)
